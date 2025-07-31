@@ -1,0 +1,17 @@
+[INFO] 04-07-2025 04:28:29 [main] [Tests.TC05_OverViewTest.setup(TC05_OverViewTest.java:34)] - starting Edge browser
+[INFO] 04-07-2025 04:28:38 [main] [Tests.TC05_OverViewTest.setup(TC05_OverViewTest.java:36)] - get the URL and loading the page
+[INFO] 04-07-2025 04:28:38 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case checkOutOverviewTC Started
+[INFO] 04-07-2025 04:28:39 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 2
+[INFO] 04-07-2025 04:28:39 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $9.99
+[INFO] 04-07-2025 04:28:39 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 5
+[INFO] 04-07-2025 04:28:39 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $7.99
+[INFO] 04-07-2025 04:28:39 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 6
+[INFO] 04-07-2025 04:28:39 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $15.99
+[INFO] 04-07-2025 04:28:40 [main] [Tests.TC05_OverViewTest.checkOutOverviewTC(TC05_OverViewTest.java:54)] - first name Mohamed_2025-07-04-4-28-25AM last name Essam_2025-07-04-4-28-25AM ZipCod 67416
+[INFO] 04-07-2025 04:28:40 [main] [Pages.P05_OverViewPage.getSubTitle(P05_OverViewPage.java:23)] -  Item total :  33.97
+[INFO] 04-07-2025 04:28:41 [main] [Pages.P05_OverViewPage.getTax(P05_OverViewPage.java:28)] - Tax :  2.72
+[INFO] 04-07-2025 04:28:41 [main] [Pages.P05_OverViewPage.calculateTotalPrices(P05_OverViewPage.java:38)] -  calculated Total amount : 36.690002
+[INFO] 04-07-2025 04:28:41 [main] [Pages.P05_OverViewPage.getSubTitle(P05_OverViewPage.java:23)] -  Item total :  33.97
+[INFO] 04-07-2025 04:28:41 [main] [Pages.P05_OverViewPage.getTax(P05_OverViewPage.java:28)] - Tax :  2.72
+[INFO] 04-07-2025 04:28:41 [main] [Pages.P05_OverViewPage.getTotal(P05_OverViewPage.java:33)] -  Total with Tax :  36.69
+[INFO] 04-07-2025 04:28:41 [main] [Listeners.IInvokedListenersClass.afterInvocation(IInvokedListenersClass.java:21)] - test case checkOutOverviewTC failed

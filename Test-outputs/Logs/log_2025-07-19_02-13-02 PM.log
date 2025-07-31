@@ -1,0 +1,13 @@
+[INFO] 19-07-2025 14:13:02 [main] [Tests.TC01_LoginTest.setup(TC01_LoginTest.java:28)] - starting Edge browser
+[INFO] 19-07-2025 14:13:03 [main] [Tests.TC01_LoginTest.setup(TC01_LoginTest.java:30)] - get the URL and loading the page
+[INFO] 19-07-2025 14:13:04 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case validLogInTC Started
+[INFO] 19-07-2025 14:13:10 [main] [Listeners.IInvokedListenersClass.afterInvocation(IInvokedListenersClass.java:35)] - test case validLogInTC failed
+[ERROR] 19-07-2025 14:13:10 [main] [Utilities.Utility.takingScreenShot(Utility.java:101)] - no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=138.0.3351.95)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [0225345a807cf612c3ccd77572ffd882, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.95, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:52601}, msedge: {msedgedriverVersion: 138.0.3351.77 (efaf6935b436..., userDataDir: C:\Users\el5DraGy\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52601/devtoo..., se:cdpVersion: 138.0.3351.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0225345a807cf612c3ccd77572ffd882

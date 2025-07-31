@@ -1,0 +1,4 @@
+[INFO] 29-06-2025 21:26:37 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:30)] - starting Edge browser
+[INFO] 29-06-2025 21:26:40 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:32)] - get the URL and loading the page
+[INFO] 29-06-2025 21:26:42 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case clickOnCartIcon Started
+[INFO] 29-06-2025 21:26:55 [main] [Listeners.IInvokedListenersClass.afterInvocation(IInvokedListenersClass.java:21)] - test case clickOnCartIcon failed

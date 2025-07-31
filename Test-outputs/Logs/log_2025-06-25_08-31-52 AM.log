@@ -1,0 +1,4 @@
+[INFO] 25-06-2025 08:31:52 [main] [Tests.TC01_LoginTest.setup(TC01_LoginTest.java:28)] - starting Edge browser
+[INFO] 25-06-2025 08:31:55 [main] [Tests.TC01_LoginTest.setup(TC01_LoginTest.java:30)] - get the URL and loading the page
+[INFO] 25-06-2025 08:31:56 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case validLogInTC Started
+[INFO] 25-06-2025 08:32:00 [main] [Listeners.ITestListenersClass.onTestSuccess(ITestListenersClass.java:13)] - test case validLogInTC Succeed

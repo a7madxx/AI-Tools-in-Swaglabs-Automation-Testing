@@ -1,0 +1,30 @@
+[INFO] 08-07-2025 19:34:38 [main] [Tests.TC02_LandingTest.login(TC02_LandingTest.java:30)] - starting Edge browser
+[INFO] 08-07-2025 19:34:39 [main] [Tests.TC02_LandingTest.login(TC02_LandingTest.java:32)] - get the URL and loading the page
+[INFO] 08-07-2025 19:34:45 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:45)] - starting Edge browser
+[INFO] 08-07-2025 19:34:54 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:47)] - get the URL and loading the page
+[INFO] 08-07-2025 19:34:57 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case addingRandomNumberToProductsCartTC Started
+[INFO] 08-07-2025 19:34:57 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 2
+[INFO] 08-07-2025 19:34:57 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $9.99
+[INFO] 08-07-2025 19:34:57 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 3
+[INFO] 08-07-2025 19:34:58 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $15.99
+[INFO] 08-07-2025 19:34:58 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 4
+[INFO] 08-07-2025 19:34:58 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $49.99
+[INFO] 08-07-2025 19:34:58 [main] [Pages.P02_landingPage.getNumberOfSelectedProducts(P02_landingPage.java:76)] - number of selected Products 3
+[INFO] 08-07-2025 19:34:58 [main] [Pages.P02_landingPage.getNumberOfProductsOnCardIcon(P02_landingPage.java:64)] - number of products in Cart icon 3
+[INFO] 08-07-2025 19:34:58 [main] [Listeners.ITestListenersClass.onTestSuccess(ITestListenersClass.java:13)] - test case addingRandomNumberToProductsCartTC Succeed
+[INFO] 08-07-2025 19:35:05 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:45)] - starting Edge browser
+[INFO] 08-07-2025 19:35:12 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:47)] - get the URL and loading the page
+[INFO] 08-07-2025 19:35:12 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case checkingNumberOfSelectedProductsTC Started
+[INFO] 08-07-2025 19:35:12 [main] [Pages.P02_landingPage.addProductsToCart(P02_landingPage.java:36)] - number of selected products 1
+[INFO] 08-07-2025 19:35:13 [main] [Pages.P02_landingPage.getNumberOfSelectedProducts(P02_landingPage.java:76)] - number of selected Products 0
+[ERROR] 08-07-2025 19:35:18 [main] [Pages.P02_landingPage.getNumberOfProductsOnCardIcon(P02_landingPage.java:68)] - Expected condition failed: waiting for visibility of element located by By.className: shopping_cart_badge (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.65, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:49994}, msedge: {msedgedriverVersion: 138.0.3351.77 (efaf6935b436..., userDataDir: C:\Users\el5DraGy\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49994/devtoo..., se:cdpVersion: 138.0.3351.65, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b3a2c3f09f2b13f40347832827052c3d
+[INFO] 08-07-2025 19:35:18 [main] [Listeners.ITestListenersClass.onTestSuccess(ITestListenersClass.java:13)] - test case checkingNumberOfSelectedProductsTC Succeed
+[INFO] 08-07-2025 19:35:21 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:45)] - starting Edge browser
+[INFO] 08-07-2025 19:35:29 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:47)] - get the URL and loading the page
+[INFO] 08-07-2025 19:35:31 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case clickOnCartIcon Started
+[INFO] 08-07-2025 19:35:32 [main] [Listeners.ITestListenersClass.onTestSuccess(ITestListenersClass.java:13)] - test case clickOnCartIcon Succeed

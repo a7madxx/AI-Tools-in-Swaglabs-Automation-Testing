@@ -1,0 +1,42 @@
+[INFO] 03-07-2025 17:58:12 [main] [Tests.TC03_CartTest.setup(TC03_CartTest.java:30)] - starting Edge browser
+[INFO] 03-07-2025 17:58:14 [main] [Tests.TC03_CartTest.setup(TC03_CartTest.java:32)] - get the URL and loading the page
+[INFO] 03-07-2025 17:58:15 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case ComparingPricesCartTC Started
+[INFO] 03-07-2025 17:58:18 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 1
+[INFO] 03-07-2025 17:58:18 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $29.99
+[INFO] 03-07-2025 17:58:18 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 4
+[INFO] 03-07-2025 17:58:18 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $49.99
+[INFO] 03-07-2025 17:58:18 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 5
+[INFO] 03-07-2025 17:58:19 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $7.99
+[INFO] 03-07-2025 17:58:19 [main] [Pages.P02_landingPage.getTotalPriceOfSelectedProducts(P02_landingPage.java:90)] - the price of product is $29.99
+[INFO] 03-07-2025 17:58:19 [main] [Pages.P02_landingPage.getTotalPriceOfSelectedProducts(P02_landingPage.java:90)] - the price of product is $49.99
+[INFO] 03-07-2025 17:58:19 [main] [Pages.P02_landingPage.getTotalPriceOfSelectedProducts(P02_landingPage.java:90)] - the price of product is $7.99
+[INFO] 03-07-2025 17:58:19 [main] [Pages.P02_landingPage.getTotalPriceOfSelectedProducts(P02_landingPage.java:93)] - the total price of the products in page 87.97
+[INFO] 03-07-2025 17:58:19 [main] [Pages.P03_CartPage.getTotalPriceInCart(P03_CartPage.java:32)] - the total price of the products in Cart 87.97
+[INFO] 03-07-2025 17:58:20 [main] [Listeners.ITestListenersClass.onTestSuccess(ITestListenersClass.java:13)] - test case ComparingPricesCartTC Succeed
+[INFO] 03-07-2025 17:58:27 [main] [Tests.TC01_LoginTest.setup(TC01_LoginTest.java:28)] - starting Edge browser
+[INFO] 03-07-2025 17:58:36 [main] [Tests.TC01_LoginTest.setup(TC01_LoginTest.java:30)] - get the URL and loading the page
+[INFO] 03-07-2025 17:58:36 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case validLogInTC Started
+[INFO] 03-07-2025 17:58:38 [main] [Listeners.ITestListenersClass.onTestSuccess(ITestListenersClass.java:13)] - test case validLogInTC Succeed
+[INFO] 03-07-2025 17:58:42 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:31)] - starting Edge browser
+[INFO] 03-07-2025 17:58:50 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:33)] - get the URL and loading the page
+[INFO] 03-07-2025 17:58:50 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case addingRandomNumberToProductsCartTC Started
+[INFO] 03-07-2025 17:58:50 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 2
+[INFO] 03-07-2025 17:58:51 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $9.99
+[INFO] 03-07-2025 17:58:51 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 3
+[INFO] 03-07-2025 17:59:01 [main] [Listeners.IInvokedListenersClass.afterInvocation(IInvokedListenersClass.java:21)] - test case addingRandomNumberToProductsCartTC failed
+[INFO] 03-07-2025 17:59:06 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:31)] - starting Edge browser
+[INFO] 03-07-2025 17:59:12 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:33)] - get the URL and loading the page
+[INFO] 03-07-2025 17:59:12 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case checkingNumberOfSelectedProductsTC Started
+[INFO] 03-07-2025 17:59:14 [main] [Pages.P02_landingPage.addProductsToCart(P02_landingPage.java:36)] - number of selected products 6
+[INFO] 03-07-2025 17:59:14 [main] [Pages.P02_landingPage.getNumberOfSelectedProducts(P02_landingPage.java:76)] - number of selected Products 1
+[INFO] 03-07-2025 17:59:14 [main] [Pages.P02_landingPage.getNumberOfProductsOnCardIcon(P02_landingPage.java:64)] - number of products in Cart icon 1
+[INFO] 03-07-2025 17:59:15 [main] [Listeners.IInvokedListenersClass.afterInvocation(IInvokedListenersClass.java:21)] - test case checkingNumberOfSelectedProductsTC failed
+[INFO] 03-07-2025 17:59:18 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:31)] - starting Edge browser
+[INFO] 03-07-2025 17:59:26 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:33)] - get the URL and loading the page
+[INFO] 03-07-2025 17:59:26 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case clickOnCartIcon Started
+[INFO] 03-07-2025 17:59:29 [main] [Listeners.ITestListenersClass.onTestSuccess(ITestListenersClass.java:13)] - test case clickOnCartIcon Succeed
+[INFO] 03-07-2025 17:59:33 [main] [Tests.TC04_CheckOutTest.setup(TC04_CheckOutTest.java:33)] - starting Edge browser
+[INFO] 03-07-2025 17:59:41 [main] [Tests.TC04_CheckOutTest.setup(TC04_CheckOutTest.java:35)] - get the URL and loading the page
+[INFO] 03-07-2025 17:59:41 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case fillCheckOutInformationTC Started
+[INFO] 03-07-2025 17:59:42 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 3
+[INFO] 03-07-2025 17:59:52 [main] [Listeners.IInvokedListenersClass.afterInvocation(IInvokedListenersClass.java:21)] - test case fillCheckOutInformationTC failed

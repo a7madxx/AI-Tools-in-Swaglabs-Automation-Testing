@@ -1,0 +1,17 @@
+[INFO] 03-07-2025 18:20:44 [main] [Tests.TC03_CartTest.setup(TC03_CartTest.java:30)] - starting Edge browser
+[INFO] 03-07-2025 18:20:53 [main] [Tests.TC03_CartTest.setup(TC03_CartTest.java:32)] - get the URL and loading the page
+[INFO] 03-07-2025 18:20:53 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case ComparingPricesCartTC Started
+[INFO] 03-07-2025 18:20:53 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 3
+[INFO] 03-07-2025 18:20:54 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $15.99
+[INFO] 03-07-2025 18:20:54 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 4
+[INFO] 03-07-2025 18:21:04 [main] [Listeners.IInvokedListenersClass.afterInvocation(IInvokedListenersClass.java:21)] - test case ComparingPricesCartTC failed
+[INFO] 03-07-2025 18:21:10 [main] [Tests.TC01_LoginTest.setup(TC01_LoginTest.java:28)] - starting Edge browser
+[INFO] 03-07-2025 18:21:17 [main] [Tests.TC01_LoginTest.setup(TC01_LoginTest.java:30)] - get the URL and loading the page
+[INFO] 03-07-2025 18:21:17 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case validLogInTC Started
+[INFO] 03-07-2025 18:21:19 [main] [Listeners.ITestListenersClass.onTestSuccess(ITestListenersClass.java:13)] - test case validLogInTC Succeed
+[INFO] 03-07-2025 18:21:21 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:31)] - starting Edge browser
+[INFO] 03-07-2025 18:21:29 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:33)] - get the URL and loading the page
+[INFO] 03-07-2025 18:21:29 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case addingRandomNumberToProductsCartTC Started
+[INFO] 03-07-2025 18:21:29 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 2
+[INFO] 03-07-2025 18:21:29 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $9.99
+[INFO] 03-07-2025 18:21:29 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 4

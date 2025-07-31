@@ -1,0 +1,11 @@
+[INFO] 30-06-2025 14:27:59 [main] [Tests.TC04_CheckOutTest.setup(TC04_CheckOutTest.java:33)] - starting Edge browser
+[INFO] 30-06-2025 14:28:02 [main] [Tests.TC04_CheckOutTest.setup(TC04_CheckOutTest.java:35)] - get the URL and loading the page
+[INFO] 30-06-2025 14:28:03 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case fillCheckOutInformationTC Started
+[INFO] 30-06-2025 14:28:08 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 3
+[INFO] 30-06-2025 14:28:10 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $15.99
+[INFO] 30-06-2025 14:28:11 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 5
+[INFO] 30-06-2025 14:28:12 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $7.99
+[INFO] 30-06-2025 14:28:12 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:49)] - the random number : 6
+[INFO] 30-06-2025 14:28:13 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:56)] - the price of product is $15.99
+[INFO] 30-06-2025 14:28:17 [main] [Tests.TC04_CheckOutTest.fillCheckOutInformationTC(TC04_CheckOutTest.java:52)] - first name Mohamed_2025-06-30-2-27-40PM last name Essam_2025-06-30-2-27-40PM ZipCod 23077
+[INFO] 30-06-2025 14:28:17 [main] [Listeners.ITestListenersClass.onTestSuccess(ITestListenersClass.java:13)] - test case fillCheckOutInformationTC Succeed

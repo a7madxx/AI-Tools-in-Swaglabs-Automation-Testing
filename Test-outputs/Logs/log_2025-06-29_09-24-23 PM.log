@@ -1,0 +1,13 @@
+[INFO] 29-06-2025 21:24:23 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:30)] - starting Edge browser
+[INFO] 29-06-2025 21:24:30 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:32)] - get the URL and loading the page
+[INFO] 29-06-2025 21:24:31 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case clickOnCartIcon Started
+[INFO] 29-06-2025 21:24:45 [main] [Listeners.IInvokedListenersClass.afterInvocation(IInvokedListenersClass.java:22)] - test case clickOnCartIcon failed
+[ERROR] 29-06-2025 21:25:03 [main] [Utilities.Utility.takingFullscreenShot(Utility.java:122)] - no such element: Unable to locate element: {"method":"css selector","selector":".shopping_cart_badge"}
+  (Session info: MicrosoftEdge=138.0.3351.55)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [6359cd95d6e186f1b3df820801011a38, findElement {value=shopping_cart_badge, using=class name}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.55, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:53083}, msedge: {msedgedriverVersion: 138.0.3351.55 (3171b71f28b7..., userDataDir: C:\Users\el5DraGy\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53083/devtoo..., se:cdpVersion: 138.0.3351.55, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6359cd95d6e186f1b3df820801011a38

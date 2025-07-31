@@ -1,0 +1,7 @@
+[INFO] 29-06-2025 12:36:30 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:30)] - starting Edge browser
+[INFO] 29-06-2025 12:36:39 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:32)] - get the URL and loading the page
+[INFO] 29-06-2025 12:36:40 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case checkingNumberOfSelectedProductsTC Started
+[INFO] 29-06-2025 12:36:40 [main] [Pages.P02_landingPage.addProductsToCart(P02_landingPage.java:28)] - number of selected products 6
+[INFO] 29-06-2025 12:36:41 [main] [Pages.P02_landingPage.getNumberOfProductsOnCardIcon(P02_landingPage.java:38)] - number of products in Cart icon 6
+[INFO] 29-06-2025 12:36:42 [main] [Pages.P02_landingPage.getNumberOfSelectedProducts(P02_landingPage.java:50)] - number of selected Products 6
+[INFO] 29-06-2025 12:36:42 [main] [Listeners.IInvokedListenersClass.afterInvocation(IInvokedListenersClass.java:20)] - test case checkingNumberOfSelectedProductsTC failed

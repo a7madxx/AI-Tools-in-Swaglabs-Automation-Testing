@@ -1,0 +1,10 @@
+[INFO] 08-07-2025 19:41:17 [main] [Tests.TC02_LandingTest.login(TC02_LandingTest.java:30)] - starting Edge browser
+[INFO] 08-07-2025 19:41:26 [main] [Tests.TC02_LandingTest.login(TC02_LandingTest.java:32)] - get the URL and loading the page
+[INFO] 08-07-2025 19:41:30 [main] [Tests.TC02_LandingTest.setup(TC02_LandingTest.java:45)] - starting Edge browser
+[INFO] 08-07-2025 19:41:31 [main] [Listeners.IInvokedListenersClass.afterInvocation(IInvokedListenersClass.java:35)] - test case setup failed
+[INFO] 08-07-2025 19:41:32 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case addingRandomNumberToProductsCartTC Started
+[INFO] 08-07-2025 19:41:32 [main] [Listeners.ITestListenersClass.onTestSkipped(ITestListenersClass.java:17)] - test case addingRandomNumberToProductsCartTC Skipped
+[INFO] 08-07-2025 19:41:32 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case checkingNumberOfSelectedProductsTC Started
+[INFO] 08-07-2025 19:41:32 [main] [Listeners.ITestListenersClass.onTestSkipped(ITestListenersClass.java:17)] - test case checkingNumberOfSelectedProductsTC Skipped
+[INFO] 08-07-2025 19:41:33 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case clickOnCartIcon Started
+[INFO] 08-07-2025 19:41:33 [main] [Listeners.ITestListenersClass.onTestSkipped(ITestListenersClass.java:17)] - test case clickOnCartIcon Skipped

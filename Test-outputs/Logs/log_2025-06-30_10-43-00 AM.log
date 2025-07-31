@@ -1,0 +1,15 @@
+[INFO] 30-06-2025 10:43:00 [main] [Tests.TC03_CartTest.setup(TC03_CartTest.java:30)] - starting Edge browser
+[INFO] 30-06-2025 10:43:10 [main] [Tests.TC03_CartTest.setup(TC03_CartTest.java:32)] - get the URL and loading the page
+[INFO] 30-06-2025 10:43:10 [main] [Listeners.ITestListenersClass.onTestStart(ITestListenersClass.java:9)] - test case ComparingPricesCartTC Started
+[INFO] 30-06-2025 10:43:11 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:50)] - the random number : 1
+[INFO] 30-06-2025 10:43:11 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:55)] - the price of product is $29.99
+[INFO] 30-06-2025 10:43:11 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:50)] - the random number : 2
+[INFO] 30-06-2025 10:43:11 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:55)] - the price of product is $9.99
+[INFO] 30-06-2025 10:43:11 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:50)] - the random number : 3
+[INFO] 30-06-2025 10:43:11 [main] [Pages.P02_landingPage.addRandomProduct(P02_landingPage.java:55)] - the price of product is $15.99
+[INFO] 30-06-2025 10:43:12 [main] [Pages.P02_landingPage.getTotalPriceOfSelectedProducts(P02_landingPage.java:89)] - the price of product is $29.99
+[INFO] 30-06-2025 10:43:12 [main] [Pages.P02_landingPage.getTotalPriceOfSelectedProducts(P02_landingPage.java:89)] - the price of product is $9.99
+[INFO] 30-06-2025 10:43:12 [main] [Pages.P02_landingPage.getTotalPriceOfSelectedProducts(P02_landingPage.java:89)] - the price of product is $15.99
+[INFO] 30-06-2025 10:43:12 [main] [Pages.P02_landingPage.getTotalPriceOfSelectedProducts(P02_landingPage.java:92)] - the total price of the products in page 55.97
+[INFO] 30-06-2025 10:43:12 [main] [Pages.P03_CartPage.getTotalPriceInCart(P03_CartPage.java:30)] - the total price of the products in Cart 55.97
+[INFO] 30-06-2025 10:43:12 [main] [Listeners.ITestListenersClass.onTestSuccess(ITestListenersClass.java:13)] - test case ComparingPricesCartTC Succeed
