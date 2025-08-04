@@ -39,6 +39,14 @@ public class TC01_LoginTest {
                 .logInButton();
         Assert.assertTrue(new P01_LoginPage(getDriver()).assertLogin(getPropertyData("environment", "HomePage_URL")));
     }
+    @Test
+    public void inValidLogInTC() throws IOException {
+        new P01_LoginPage(getDriver())
+                .sendUserName("USERNAME")
+                .sendPassword("PASSWORD")
+                .logInButton();
+        Assert.assertTrue(new P01_LoginPage(getDriver()).assertLogin(getPropertyData("environment", "HomePage_URL")));
+    }
 
     @AfterMethod
     public void quit() {
