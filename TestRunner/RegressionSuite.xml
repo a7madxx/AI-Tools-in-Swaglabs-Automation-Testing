@@ -12,6 +12,8 @@
             <class name="Tests.TC04_CheckOutTest"/>
             <class name="Tests.TC05_OverViewTest"/>
             <class name="Tests.TC06_FinishingOrderTest"/>
+            <class name="Tests.TC07_ProblemUserTest"/>
+            <class name="Tests.TC08_ErrorUserTest"/>
         </classes>
     </test>
 </suite>
