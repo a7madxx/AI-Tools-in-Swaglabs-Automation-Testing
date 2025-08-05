@@ -5,6 +5,7 @@ import Utilities.Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 import java.util.Set;
@@ -27,6 +28,8 @@ public class P02_landingPage {
     private final By productSortContainer = By.className("product_sort_container");
     private final By inventoryItemPrices = By.className("inventory_item_price");
     private final By inventoryItemNames = By.className("inventory_item_name");
+    private final By inventoryItemImg = By.className("inventory_item_img");
+
 
 
     public P02_landingPage(WebDriver driver) {
@@ -131,6 +134,57 @@ public class P02_landingPage {
             lastPrice = currentPrice;
         }
         return true;
+    }
+    // Add this new method to your P02_landingPage class
+
+    /**
+     * Checks if all product images on the page have the same source URL.
+     * This is the specific bug associated with the 'problem_user'.
+     * @return true if all image sources are identical, false otherwise.
+     */
+    // *** DELETE the old areAllProductImagesTheSame() method ***
+
+    // *** ADD this new, clearer method ***
+
+    /**
+     * Waits for the inventory to load, finds all product images,
+     * and returns the count of unique image source URLs.
+     * @return A long representing the number of unique images found.
+     */
+    public long getUniqueProductImageCount() {
+        // Wait until at least one product is visible before checking.
+        By inventoryItemLocator = By.className("inventory_item");
+        Utility.generalWait(driver).until(ExpectedConditions.visibilityOfElementLocated(inventoryItemLocator));
+
+        // Find all the image elements.
+        List<WebElement> imageElements = driver.findElements(By.className("inventory_item_img"));
+
+        LogsUtils.info("Found " + imageElements.size() + " total product images.");
+
+        if (imageElements.isEmpty()) {
+            return 0; // Return 0 if no images are found.
+        }
+
+        // Use a Java Stream to find and count the unique 'src' attributes.
+        long uniqueImageCount = imageElements.stream()
+                .map(element -> element.getAttribute("src"))
+                .distinct()
+                .count();
+
+        LogsUtils.info("Found " + uniqueImageCount + " unique product image URLs.");
+
+        return uniqueImageCount;
+    }
+    public P02_landingPage clickButtonAtIndex(int index) {
+        String buttonXPath = String.format("(//button[(@class)])[%d]", index);
+        By productButtonLocator = By.xpath(buttonXPath);
+        clickOnElement(driver, productButtonLocator);
+        return this;
+    }
+    public String getButtonTextAtIndex(int index) {
+        String buttonXPath = String.format("(//button[(@class)])[%d]", index);
+        By productButtonLocator = By.xpath(buttonXPath);
+        return getText(driver, productButtonLocator);
     }
 
 }

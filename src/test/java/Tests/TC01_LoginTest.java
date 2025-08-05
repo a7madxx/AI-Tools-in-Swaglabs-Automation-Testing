@@ -20,6 +20,8 @@ import static Utilities.Utility.implicitWait;
 @Listeners({IInvokedListenersClass.class, ITestListenersClass.class})
 public class TC01_LoginTest {
     private final String USERNAME = getJsonData("validLogin", "usernameValue");
+    private final String LOCKEDOUT_USER = getJsonData("specialUsers", "lockedOutUser");
+    private final String PERFORMANCE_GLITCH_USER = getJsonData("specialUsers", "performanceGlitchUser");
     private final String PASSWORD = getJsonData("validLogin", "passWordValue");
 
     @BeforeMethod
@@ -50,15 +52,26 @@ public class TC01_LoginTest {
 
     @Test
     public void lockedOutUserLoginTC() {
-        P01_LoginPage loginPage = new P01_LoginPage(getDriver());
-        loginPage.sendUserName("locked_out_user")
+        new P01_LoginPage(getDriver())
+        .sendUserName(LOCKEDOUT_USER)
                 .sendPassword(PASSWORD) // Reuses the valid password
                 .logInButton();
 
         String expectedErrorMessage = "Epic sadface: Sorry, this user has been locked out.";
-        Assert.assertTrue(loginPage.getErrorMessage().contains(expectedErrorMessage), "The error message for a locked-out user is incorrect.");
+        Assert.assertTrue(new  P01_LoginPage(getDriver()).getErrorMessage().contains(expectedErrorMessage), "The error message for a locked-out user is incorrect.");
     }
 
+    @Test
+    public void performanceGlitchUserLoginTC() throws IOException {
+
+        new P01_LoginPage(getDriver()).
+                sendUserName(PERFORMANCE_GLITCH_USER)
+                .sendPassword(PASSWORD)
+                .logInButton();
+
+        Assert.assertTrue(new P01_LoginPage(getDriver()).assertLogin(getPropertyData("environment", "HomePage_URL")),
+                "The performance_glitch_user should have been able to log in successfully.");
+    }
     @AfterMethod
     public void quit() {
         quitDriver();
