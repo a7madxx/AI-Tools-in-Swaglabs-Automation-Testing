@@ -72,6 +72,14 @@ public class TC01_LoginTest {
         Assert.assertTrue(new P01_LoginPage(getDriver()).assertLogin(getPropertyData("environment", "HomePage_URL")),
                 "The performance_glitch_user should have been able to log in successfully.");
     }
+    @Test
+    public void directNavigationToInventoryIsBlockedTest() throws IOException {
+        getDriver().get(getPropertyData("environment", "HomePage_URL"));
+
+        String expectedErrorMessage = "You can only access '/inventory.html' when you are logged in.";
+        Assert.assertTrue(new P01_LoginPage(getDriver()).getErrorMessage().contains(expectedErrorMessage),
+                "A specific error message should be shown for trying to access a protected page.");
+    }
     @AfterMethod
     public void quit() {
         quitDriver();

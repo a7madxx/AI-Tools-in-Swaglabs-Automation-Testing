@@ -29,6 +29,10 @@ public class P02_landingPage {
     private final By inventoryItemPrices = By.className("inventory_item_price");
     private final By inventoryItemNames = By.className("inventory_item_name");
     private final By inventoryItemImg = By.className("inventory_item_img");
+    private final By menuButton = By.id("react-burger-menu-btn");
+    private final By logoutLink = By.id("logout_sidebar_link");
+    private final By menuCloseButton = By.id("react-burger-cross-btn");
+    private final By resetAppStateLink = By.id("reset_sidebar_link");
 
 
 
@@ -185,6 +189,30 @@ public class P02_landingPage {
         String buttonXPath = String.format("(//button[(@class)])[%d]", index);
         By productButtonLocator = By.xpath(buttonXPath);
         return getText(driver, productButtonLocator);
+    }
+    public P01_LoginPage logout() {
+        clickOnElement(driver, menuButton);
+        // It's important to wait for the logout link to be clickable
+        Utility.generalWait(driver).until(ExpectedConditions.elementToBeClickable(logoutLink));
+        clickOnElement(driver, logoutLink);
+        return new P01_LoginPage(driver);
+    }
+    public int addSingleRandomProductAndReturnIndex() {
+        int randomIndex = Utility.generateRandom(6);
+        LogsUtils.info("Adding a single random product at index: " + randomIndex);
+
+        By productButtonLocator = By.xpath(String.format("(//button[(@class)])[%d]", randomIndex));
+        clickOnElement(driver, productButtonLocator);
+        return randomIndex;
+    }
+
+    public P02_landingPage resetAppState() {
+        clickOnElement(driver, menuButton);
+        Utility.generalWait(driver).until(ExpectedConditions.elementToBeClickable(resetAppStateLink));
+        clickOnElement(driver, resetAppStateLink);
+        // It's good practice to close the menu after
+        clickOnElement(driver, menuCloseButton);
+        return this;
     }
 
 }
