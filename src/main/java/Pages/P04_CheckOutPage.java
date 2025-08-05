@@ -1,5 +1,6 @@
 package Pages;
 
+import Utilities.Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -13,6 +14,8 @@ public class P04_CheckOutPage {
     private final By lastName = By.id("last-name");
     private final By zipCod = By.id("postal-code");
     private final By continueButton = By.id("continue");
+
+    private final By errorMessage = By.xpath("//h3[@data-test='error']");
 
     public P04_CheckOutPage(WebDriver driver) {
         this.driver = driver;
@@ -29,4 +32,8 @@ public class P04_CheckOutPage {
         clickOnElement(driver, continueButton);
         return new P05_OverViewPage(driver);
     }
+    public String getErrorMessage() {
+        return Utility.getText(driver, errorMessage);
+    }
+
 }

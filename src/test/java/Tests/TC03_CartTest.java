@@ -44,6 +44,25 @@ public class TC03_CartTest {
         Assert.assertTrue(new P03_CartPage(getDriver()).comparingTotalPrices(totalPrice));
     }
 
+    @Test
+    public void removeItemFromCartTC() {
+        new P01_LoginPage(getDriver())
+                .sendUserName(USERNAME)
+                .sendPassword(PASSWORD)
+                .logInButton()
+                .addRandomProduct(2, 6); // Add 2 random items
+
+        // Go to cart
+        P03_CartPage cartPage = new P02_landingPage(getDriver()).clickOnCartIcon();
+        Assert.assertEquals(cartPage.getNumberOfItemsInCart(), 2, "Cart should have 2 items initially.");
+
+        // Remove one item
+        cartPage.removeFirstItem();
+
+        // Assert that one item remains
+        Assert.assertEquals(cartPage.getNumberOfItemsInCart(), 1, "Cart should have 1 item after removal.");
+    }
+
     @AfterMethod
     public void quit() {
         quitDriver();

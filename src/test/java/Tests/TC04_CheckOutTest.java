@@ -3,6 +3,7 @@ package Tests;
 import Listeners.IInvokedListenersClass;
 import Listeners.ITestListenersClass;
 import Pages.P01_LoginPage;
+import Pages.P04_CheckOutPage;
 import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -52,6 +53,28 @@ public class TC04_CheckOutTest {
         info("first name " + FIRSTNAME + " last name " + LASTNAME + " ZipCod " + ZIPCODE);
 
         Assert.assertTrue(verifyURL(getDriver(), getPropertyData("environment", "Checkout_Overview_URL")));
+    }
+    @Test
+    public void checkoutInformationValidationTC() {
+        // Navigate to the checkout page
+        new P01_LoginPage(getDriver())
+                .sendUserName(USERNAME)
+                .sendPassword(PASSWORD)
+                .logInButton()
+                .addRandomProduct(1, 6)
+                .clickOnCartIcon()
+                .clickOnCheckButton();
+
+        P04_CheckOutPage checkOutPage = new P04_CheckOutPage(getDriver());
+
+        // Test for missing first name
+        checkOutPage.clickOnContinueButton();
+        Assert.assertTrue(checkOutPage.getErrorMessage().contains("First Name is required"));
+
+        // Test for missing last name
+        checkOutPage.fillInformationForm("Test", "", "12345");
+        checkOutPage.clickOnContinueButton();
+        Assert.assertTrue(checkOutPage.getErrorMessage().contains("Last Name is required"));
     }
 
     @AfterMethod

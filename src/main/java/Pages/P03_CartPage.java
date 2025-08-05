@@ -17,6 +17,9 @@ public class P03_CartPage {
     private final By checkOutButtonLocator = By.id("checkout");
     private float totalPrice = 0;
 
+    private final By cartItems = By.className("cart_item");
+
+
     public P03_CartPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -44,5 +47,15 @@ public class P03_CartPage {
     public P04_CheckOutPage clickOnCheckButton() {
         clickOnElement(driver, checkOutButtonLocator);
         return new P04_CheckOutPage(driver);
+    }
+
+    public P03_CartPage removeFirstItem() {
+        // A simple implementation to remove the first item found
+        By firstRemoveButton = By.xpath("(//button[.='Remove'])[1]");
+        clickOnElement(driver, firstRemoveButton);
+        return this;
+    }
+    public int getNumberOfItemsInCart() {
+        return driver.findElements(cartItems).size();
     }
 }

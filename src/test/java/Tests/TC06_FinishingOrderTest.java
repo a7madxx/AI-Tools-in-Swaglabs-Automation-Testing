@@ -16,8 +16,7 @@ import static DriverFactory.DriverFactory.*;
 import static Utilities.DataUtils.getJsonData;
 import static Utilities.DataUtils.getPropertyData;
 import static Utilities.LogsUtils.info;
-import static Utilities.Utility.getTimeStamp;
-import static Utilities.Utility.implicitWait;
+import static Utilities.Utility.*;
 
 @Listeners({IInvokedListenersClass.class, ITestListenersClass.class})
 public class TC06_FinishingOrderTest {
@@ -61,6 +60,27 @@ public class TC06_FinishingOrderTest {
         info("first name " + FIRSTNAME + " last name " + LASTNAME + " ZipCod " + ZIPCODE);
 
         Assert.assertTrue(new P06_FinishingOrderPage(getDriver()).visibilityOfFinishingMessage());
+    }
+    @Test
+    public void backHomeAfterFinishingOrderTC() throws IOException {
+        // Complete the entire order flow
+        new P01_LoginPage(getDriver())
+                .sendUserName(USERNAME)
+                .sendPassword(PASSWORD)
+                .logInButton()
+                .addRandomProduct(1, 6)
+                .clickOnCartIcon()
+                .clickOnCheckButton()
+                .fillInformationForm(FIRSTNAME, LASTNAME, ZIPCODE)
+                .clickOnContinueButton()
+                .clickOnFinish();
+
+        // From the confirmation page, click "Back Home"
+        P06_FinishingOrderPage finishingPage = new P06_FinishingOrderPage(getDriver());
+        finishingPage.clickBackHome();
+
+        // Assert the URL is the main inventory page
+        Assert.assertTrue(verifyURL(getDriver(), getPropertyData("environment", "HomePage_URL")));
     }
 
     @AfterMethod

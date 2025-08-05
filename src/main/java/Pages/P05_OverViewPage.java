@@ -14,6 +14,7 @@ public class P05_OverViewPage {
     private final By finishButton = By.xpath("//button[contains(@class,'cart_button')]");
     private final By finishButtonId = By.id("finish");
 
+    private final By cancelButton = By.id("cancel");
 
     public P05_OverViewPage(WebDriver driver) {
         this.driver = driver;
@@ -48,5 +49,10 @@ public class P05_OverViewPage {
     public P06_FinishingOrderPage clickOnFinish() {
         Utility.clickOnElement(driver, finishButton);
         return new P06_FinishingOrderPage(driver);
+    }
+
+    public P02_landingPage clickOnCancel() {
+        Utility.clickOnElement(driver, cancelButton);
+        return new P02_landingPage(driver);
     }
 }

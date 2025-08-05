@@ -4,6 +4,7 @@ import Listeners.IInvokedListenersClass;
 import Listeners.ITestListenersClass;
 import Pages.P01_LoginPage;
 import Pages.P05_OverViewPage;
+import Utilities.Utility;
 import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -56,6 +57,26 @@ public class TC05_OverViewTest {
         Assert.assertTrue(new P05_OverViewPage(getDriver()).comparingPrices());
     }
 
+    @Test
+    public void cancelOrderFromOverviewTC() throws IOException {
+        // Navigate to the overview page
+        new P01_LoginPage(getDriver())
+                .sendUserName(USERNAME)
+                .sendPassword(PASSWORD)
+                .logInButton()
+                .addRandomProduct(1, 6)
+                .clickOnCartIcon()
+                .clickOnCheckButton()
+                .fillInformationForm(FIRSTNAME, LASTNAME, ZIPCODE)
+                .clickOnContinueButton();
+
+        // Cancel from the overview page
+        P05_OverViewPage overViewPage = new P05_OverViewPage(getDriver());
+        overViewPage.clickOnCancel();
+
+        // Assert the user is returned to the inventory/home page
+        Assert.assertTrue(Utility.verifyURL(getDriver(), getPropertyData("environment", "HomePage_URL")));
+    }
     @AfterMethod
     public void quit() {
         quitDriver();
