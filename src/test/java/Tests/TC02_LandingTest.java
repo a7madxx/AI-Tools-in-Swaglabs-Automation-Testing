@@ -68,6 +68,15 @@ public class TC02_LandingTest {
         Assert.assertTrue(verifyURL(getDriver(), getPropertyData("environment", "CartIcon_URL")));
     }
 
+    @Test
+    public void productSortFunctionalityTC() {
+        P02_landingPage landingPage = new P02_landingPage(getDriver());
+
+        // Test sorting by Price (low to high)
+        landingPage.sortProductsBy("Price (low to high)");
+        Assert.assertTrue(landingPage.isPriceSortedLowToHigh(), "Products are not sorted by price from low to high.");
+    }
+
     @AfterMethod
     public void quit() {
         quitDriver();

@@ -48,6 +48,17 @@ public class TC01_LoginTest {
         Assert.assertTrue(new P01_LoginPage(getDriver()).assertLogin(getPropertyData("environment", "HomePage_URL")));
     }
 
+    @Test
+    public void lockedOutUserLoginTC() {
+        P01_LoginPage loginPage = new P01_LoginPage(getDriver());
+        loginPage.sendUserName("locked_out_user")
+                .sendPassword(PASSWORD) // Reuses the valid password
+                .logInButton();
+
+        String expectedErrorMessage = "Epic sadface: Sorry, this user has been locked out.";
+        Assert.assertTrue(loginPage.getErrorMessage().contains(expectedErrorMessage), "The error message for a locked-out user is incorrect.");
+    }
+
     @AfterMethod
     public void quit() {
         quitDriver();

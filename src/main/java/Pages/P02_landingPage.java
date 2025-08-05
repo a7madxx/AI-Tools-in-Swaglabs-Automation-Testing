@@ -1,6 +1,7 @@
 package Pages;
 
 import Utilities.LogsUtils;
+import Utilities.Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,6 +23,11 @@ public class P02_landingPage {
     private final By CartIcon = By.className("shopping_cart_link");
     private final By pricesOfSelectedProductsLocator = By.xpath("//button[.='Remove']//preceding-sibling::div[@class='inventory_item_price']");// بيجيب التاج اللى قبله و معاه فى نفس المستوى
     private float totalPrice = 0;
+
+    private final By productSortContainer = By.className("product_sort_container");
+    private final By inventoryItemPrices = By.className("inventory_item_price");
+    private final By inventoryItemNames = By.className("inventory_item_name");
+
 
     public P02_landingPage(WebDriver driver) {
         this.driver = driver;
@@ -109,5 +115,22 @@ public class P02_landingPage {
         return new P03_CartPage(driver);
     }
 
+    public P02_landingPage sortProductsBy(String option) {
+        Utility.dropDownSelect(driver, productSortContainer, option);
+        return this;
+    }
+
+    public boolean isPriceSortedLowToHigh() {
+        List<WebElement> priceElements = driver.findElements(inventoryItemPrices);
+        float lastPrice = 0.0f;
+        for (WebElement priceElement : priceElements) {
+            float currentPrice = Float.parseFloat(priceElement.getText().replace("$", ""));
+            if (currentPrice < lastPrice) {
+                return false;
+            }
+            lastPrice = currentPrice;
+        }
+        return true;
+    }
 
 }

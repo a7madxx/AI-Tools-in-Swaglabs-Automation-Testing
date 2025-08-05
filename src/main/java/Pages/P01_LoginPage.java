@@ -10,6 +10,8 @@ public class P01_LoginPage {
     private final By password = By.id("password");
     private final By loginButton = By.id("login-button");
 
+    private final By errorMessage = By.xpath("//h3[@data-test='error']");
+
 
     public P01_LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -32,6 +34,10 @@ public class P01_LoginPage {
 
     public boolean assertLogin(String expectedValue) {
         return driver.getCurrentUrl().equals(expectedValue);
+    }
+
+    public String getErrorMessage() {
+        return Utility.getText(driver, errorMessage);
     }
 
 }
