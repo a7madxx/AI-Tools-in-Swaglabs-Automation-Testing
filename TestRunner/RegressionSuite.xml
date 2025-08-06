@@ -15,6 +15,7 @@
             <class name="Tests.TC07_ProblemUserTest"/>
             <class name="Tests.TC08_ErrorUserTest"/>
             <class name="Tests.TC09_SideMenuTest"/>
+            <class name="Tests.TC10_VisualUserTest"/>
         </classes>
     </test>
 </suite>

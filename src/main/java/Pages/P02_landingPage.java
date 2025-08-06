@@ -34,6 +34,9 @@ public class P02_landingPage {
     private final By menuCloseButton = By.id("react-burger-cross-btn");
     private final By resetAppStateLink = By.id("reset_sidebar_link");
 
+    private final String productPriceLocatorTemplate = "//div[text()='%s']/ancestor::div[@class='inventory_item_description']//div[@class='inventory_item_price']";
+    private final String productTitleLocatorTemplate = "//div[text()='%s']";
+
 
 
     public P02_landingPage(WebDriver driver) {
@@ -215,4 +218,14 @@ public class P02_landingPage {
         return this;
     }
 
+    public String getProductPriceByName(String productName) {
+        String finalPriceXpath = String.format(productPriceLocatorTemplate, productName);
+        return getText(driver, By.xpath(finalPriceXpath));
+    }
+
+    public P07_ProductDetailsPage clickProductTitle(String productName) {
+        String finalTitleXpath = String.format(productTitleLocatorTemplate, productName);
+        clickOnElement(driver, By.xpath(finalTitleXpath));
+        return new P07_ProductDetailsPage(driver);
+    }
 }
