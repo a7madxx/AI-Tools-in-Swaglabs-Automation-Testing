@@ -181,4 +181,22 @@ public class Utility {
     public static void uploadingFile(WebDriver driver, By locator, String path) {
         driver.findElement(locator).sendKeys(path);  //tagName --> input & type --> file
     }
+    //TODO: Switch to the newest opened browser tab, get its URL, close it, and switch back to the original tab.
+    public static String getUrlFromNewTabAndClose(WebDriver driver) {
+        String originalTab = driver.getWindowHandle();
+        // Wait for new tab to open
+        generalWait(driver).until(ExpectedConditions.numberOfWindowsToBe(2));
+
+        String newTabUrl = "";
+        for (String windowHandle : driver.getWindowHandles()) {
+            if (!originalTab.equalsIgnoreCase(windowHandle)) {
+                driver.switchTo().window(windowHandle);
+                newTabUrl = driver.getCurrentUrl();
+                driver.close(); // Close the new tab
+                break;
+            }
+        }
+        driver.switchTo().window(originalTab);
+        return newTabUrl;
+    }
 }

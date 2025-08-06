@@ -37,6 +37,10 @@ public class P02_landingPage {
     private final String productPriceLocatorTemplate = "//div[text()='%s']/ancestor::div[@class='inventory_item_description']//div[@class='inventory_item_price']";
     private final String productTitleLocatorTemplate = "//div[text()='%s']";
 
+    private final By twitterLink = By.linkText("Twitter");
+    private final By facebookLink = By.linkText("Facebook");
+    private final By linkedInLink = By.linkText("LinkedIn");
+
 
 
     public P02_landingPage(WebDriver driver) {
@@ -142,36 +146,19 @@ public class P02_landingPage {
         }
         return true;
     }
-    // Add this new method to your P02_landingPage class
 
-    /**
-     * Checks if all product images on the page have the same source URL.
-     * This is the specific bug associated with the 'problem_user'.
-     * @return true if all image sources are identical, false otherwise.
-     */
-    // *** DELETE the old areAllProductImagesTheSame() method ***
-
-    // *** ADD this new, clearer method ***
-
-    /**
-     * Waits for the inventory to load, finds all product images,
-     * and returns the count of unique image source URLs.
-     * @return A long representing the number of unique images found.
-     */
+    //TODO: This method is used to check if the product images are unique.
     public long getUniqueProductImageCount() {
-        // Wait until at least one product is visible before checking.
         By inventoryItemLocator = By.className("inventory_item");
         Utility.generalWait(driver).until(ExpectedConditions.visibilityOfElementLocated(inventoryItemLocator));
 
         // Find all the image elements.
         List<WebElement> imageElements = driver.findElements(By.className("inventory_item_img"));
-
         LogsUtils.info("Found " + imageElements.size() + " total product images.");
 
         if (imageElements.isEmpty()) {
             return 0; // Return 0 if no images are found.
         }
-
         // Use a Java Stream to find and count the unique 'src' attributes.
         long uniqueImageCount = imageElements.stream()
                 .map(element -> element.getAttribute("src"))
@@ -179,7 +166,6 @@ public class P02_landingPage {
                 .count();
 
         LogsUtils.info("Found " + uniqueImageCount + " unique product image URLs.");
-
         return uniqueImageCount;
     }
     public P02_landingPage clickButtonAtIndex(int index) {
@@ -213,7 +199,6 @@ public class P02_landingPage {
         clickOnElement(driver, menuButton);
         Utility.generalWait(driver).until(ExpectedConditions.elementToBeClickable(resetAppStateLink));
         clickOnElement(driver, resetAppStateLink);
-        // It's good practice to close the menu after
         clickOnElement(driver, menuCloseButton);
         return this;
     }
@@ -227,5 +212,14 @@ public class P02_landingPage {
         String finalTitleXpath = String.format(productTitleLocatorTemplate, productName);
         clickOnElement(driver, By.xpath(finalTitleXpath));
         return new P07_ProductDetailsPage(driver);
+    }
+    public void clickTwitterLink() {
+        clickOnElement(driver, twitterLink);
+    }
+    public void clickFacebookLink() {
+        clickOnElement(driver, facebookLink);
+    }
+    public void clickLinkedInLink() {
+        clickOnElement(driver, linkedInLink);
     }
 }
