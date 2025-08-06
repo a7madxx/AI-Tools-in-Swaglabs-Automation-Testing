@@ -82,6 +82,23 @@ public class TC06_FinishingOrderTest {
         // Assert the URL is the main inventory page
         Assert.assertTrue(verifyURL(getDriver(), getPropertyData("environment", "HomePage_URL")));
     }
+    // Add this new test method inside your existing TC03_CartTest.java class
+
+    @Test
+    public void cannotCompleteOrderWithEmptyCartTC() throws IOException {
+        // Step 1: Log in and go directly to the cart page without adding items
+        new P01_LoginPage(getDriver())
+                .sendUserName(USERNAME)
+                .sendPassword(PASSWORD)
+                .logInButton()
+                .clickOnCartIcon()
+                .clickOnCheckButton()
+                .fillInformationForm(FIRSTNAME, LASTNAME, ZIPCODE)
+                .clickOnContinueButton()
+                .clickOnFinish();
+
+        Assert.assertFalse(new P06_FinishingOrderPage(getDriver()).visibilityOfFinishingMessage());
+    }
 
     @AfterMethod
     public void quit() {

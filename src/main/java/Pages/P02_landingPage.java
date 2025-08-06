@@ -147,7 +147,7 @@ public class P02_landingPage {
         return true;
     }
 
-    //TODO: This method is used to check if the product images are unique.
+    //This method is used to check if the product images are unique.
     public long getUniqueProductImageCount() {
         By inventoryItemLocator = By.className("inventory_item");
         Utility.generalWait(driver).until(ExpectedConditions.visibilityOfElementLocated(inventoryItemLocator));

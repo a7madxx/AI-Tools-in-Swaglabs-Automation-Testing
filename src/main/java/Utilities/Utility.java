@@ -22,13 +22,6 @@ public class Utility {
     private static final String ScreenShotsPath = "Test-outputs/ScreenShots/";
     //TODO: allure : allure serve - allure Generate - allure open
 
-    /**
-     * Java Documentation
-     * chick on element with explicit wait
-     *
-     * @param driver
-     * @param locator
-     */
     //TODO : General Actions with Enhancement >>>>>>
     //TODO : chick on element with explicit wait
     public static void clickOnElement(WebDriver driver, By locator) {
@@ -102,13 +95,6 @@ public class Utility {
         }
 
     }
-
-    /**
-     * Taking a fullscreenShot
-     *
-     * @param driver
-     * @param locator
-     */
     //TODO : Taking a screenshot for fullscreen
     public static void takingFullscreenShot(WebDriver driver, By locator) {
         try {

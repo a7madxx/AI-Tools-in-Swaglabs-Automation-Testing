@@ -18,6 +18,7 @@ import static DriverFactory.DriverFactory.*;
 import static Utilities.DataUtils.getJsonData;
 import static Utilities.DataUtils.getPropertyData;
 import static Utilities.Utility.implicitWait;
+import static Utilities.Utility.verifyURL;
 
 @Listeners({IInvokedListenersClass.class, ITestListenersClass.class})
 public class TC03_CartTest {
@@ -78,6 +79,23 @@ public class TC03_CartTest {
                 .logInButton();
         //Assert that the cart STILL has one item
         Assert.assertEquals(newLandingPage.getNumberOfProductsOnCardIcon(), "1", "Cart state should persist after logging back in.");
+    }
+    // Add this new test method inside your existing TC03_CartTest.java class
+
+    @Test
+    public void cannotCheckoutWithEmptyCartTC() throws IOException {
+        // Step 1: Log in and go directly to the cart page without adding items
+        new P01_LoginPage(getDriver())
+                .sendUserName(USERNAME)
+                .sendPassword(PASSWORD)
+                .logInButton()
+                .clickOnCartIcon()
+                .clickOnCheckButton(); // Attempt to click "Checkout" from the empty cart
+
+        // Step 2: Assert that the application prevents navigation
+        // The URL should remain the cart page URL.
+        Assert.assertTrue(verifyURL(getDriver(), getPropertyData("environment", "CartIcon_URL")),
+                "User should not be able to proceed to checkout with an empty cart.");
     }
 
     @AfterMethod
