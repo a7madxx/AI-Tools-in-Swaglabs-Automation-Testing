@@ -9,10 +9,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
-import java.util.Set;
 
 import static DriverFactory.DriverFactory.*;
 import static Utilities.DataUtils.getJsonData;
@@ -20,7 +18,7 @@ import static Utilities.DataUtils.getPropertyData;
 import static Utilities.Utility.implicitWait;
 
 @Listeners({IInvokedListenersClass.class, ITestListenersClass.class})
-public class TC09_SideMenuTest {
+public class TC10_SideMenuTest {
 
     private final String USERNAME = getJsonData("validLogin", "usernameValue");
     private final String PASSWORD = getJsonData("validLogin", "passWordValue");

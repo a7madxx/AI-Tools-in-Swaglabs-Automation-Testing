@@ -4,9 +4,7 @@ import Listeners.IInvokedListenersClass;
 import Listeners.ITestListenersClass;
 import Pages.P01_LoginPage;
 import Pages.P02_landingPage;
-import Pages.P07_ProductDetailsPage; // <-- New Page Object
 import Utilities.LogsUtils;
-import Utilities.Utility;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -18,7 +16,7 @@ import static Utilities.DataUtils.getPropertyData;
 import static Utilities.Utility.implicitWait;
 
 @Listeners({IInvokedListenersClass.class, ITestListenersClass.class})
-public class TC10_VisualUserTest {
+public class TC09_VisualUserTest {
 
     private final String VISUAL_USER = getJsonData("specialUsers", "visualUser");
     private final String PASSWORD = getJsonData("validLogin", "passWordValue");

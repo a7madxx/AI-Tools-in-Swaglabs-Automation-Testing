@@ -47,7 +47,7 @@ public class TC01_LoginTest {
                 .sendUserName("USERNAME")
                 .sendPassword("PASSWORD")
                 .logInButton();
-        Assert.assertFalse(new P01_LoginPage(getDriver()).assertLogin(getPropertyData("environment", "HomePage_URL")));
+        Assert.assertTrue(new P01_LoginPage(getDriver()).assertLogin(getPropertyData("environment", "HomePage_URL")));
     }
 
     @Test
