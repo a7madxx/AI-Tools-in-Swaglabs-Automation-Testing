@@ -44,8 +44,7 @@ public class TC07_ProblemUserTest {
         long uniqueImageCount = landingPage.getUniqueProductImageCount();
 
         Utility.generalWait(getDriver());
-        Assert.assertEquals(uniqueImageCount, 6L,
-                "For problem_user, there should be exactly 2 unique product image sources.");
+        Assert.assertEquals(uniqueImageCount, 6L);
     }
 
     @AfterMethod

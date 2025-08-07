@@ -38,6 +38,11 @@
                 <checksumPolicy>warn</checksumPolicy>
             </releases>
         </repository>
+        <repository>
+            <id>google-maven-repo</id>
+            <name>Google Maven Repository</name>
+            <url>https://maven.google.com/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -129,22 +134,22 @@
             <scope>runtime</scope>
         </dependency>
         <!-- Add this for the official JIRA REST Java Client -->
-        <dependency>
-            <groupId>com.atlassian.jira</groupId>
-            <artifactId>jira-rest-java-client-core</artifactId>
-            <version>5.2.4</version>
-        </dependency>
-        <dependency>
-            <groupId>io.atlassian.fugue</groupId>
-            <artifactId>fugue</artifactId>
-            <version>4.7.2</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.atlassian.jira</groupId>-->
+<!--            <artifactId>jira-rest-java-client-core</artifactId>-->
+<!--            <version>5.2.4</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>io.atlassian.fugue</groupId>-->
+<!--            <artifactId>fugue</artifactId>-->
+<!--            <version>4.7.2</version>-->
+<!--        </dependency>-->
 
-        <!-- Add this for the Google Cloud Vertex AI (Gemini) Client -->
+        <!-- ADD THIS for the FREE Google AI Studio (Gemini) Client -->
         <dependency>
-            <groupId>com.theokanning.openai-gpt3-java</groupId>
-            <artifactId>service</artifactId>
-            <version>0.18.2</version>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.12.0</version>
         </dependency>
     </dependencies>
 

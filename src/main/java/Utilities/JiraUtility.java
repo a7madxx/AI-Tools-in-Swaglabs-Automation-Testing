@@ -1,67 +1,98 @@
 package Utilities;
 
-import com.atlassian.jira.rest.client.api.JiraRestClient;
-import com.atlassian.jira.rest.client.api.domain.input.IssueInput;
-import com.atlassian.jira.rest.client.api.domain.input.IssueInputBuilder;
-import com.atlassian.jira.rest.client.internal.async.AsynchronousJiraRestClientFactory;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import okhttp3.*;
 
 import java.io.File;
-import java.net.URI;
+import java.io.IOException;
+import java.util.Base64;
 
 public class JiraUtility {
 
     private final String jiraUrl;
-    private final String username;
-    private final String apiToken;
+    private final String authHeader;
     private final String projectKey;
-    private JiraRestClient restClient;
+    private final String issueTypeId;
+    private final OkHttpClient client;
 
-    public JiraUtility(String jiraUrl, String username, String apiToken, String projectKey) {
+    public JiraUtility(String jiraUrl, String username, String apiToken, String projectKey, String issueTypeId) {
         this.jiraUrl = jiraUrl;
-        this.username = username;
-        this.apiToken = apiToken;
         this.projectKey = projectKey;
-        this.restClient = getJiraRestClient();
+        this.issueTypeId = issueTypeId;
+        this.client = new OkHttpClient();
+        // Create the Base64 authentication header
+        String auth = username + ":" + apiToken;
+        this.authHeader = "Basic " + Base64.getEncoder().encodeToString(auth.getBytes());
     }
 
-    private JiraRestClient getJiraRestClient() {
-        return new AsynchronousJiraRestClientFactory()
-                .createWithBasicHttpAuthentication(URI.create(this.jiraUrl), this.username, this.apiToken);
-    }
+    public String createJiraIssue(String summary, String description) throws IOException {
+        String url = jiraUrl + "/rest/api/3/issue";
 
-    /**
-     * Creates a new bug in Jira.
-     * @param issueSummary The summary/title of the bug.
-     * @param issueDescription The detailed description of the bug.
-     * @return The key of the newly created issue (e.g., "PROJ-123").
-     */
-    public String createJiraIssue(String issueSummary, String issueDescription) {
-        try {
-            IssueInputBuilder issueBuilder = new IssueInputBuilder(projectKey, 10005L, issueSummary); // Use your project key and Issue Type ID for "Bug"
-            issueBuilder.setDescription(issueDescription);
-            IssueInput newIssue = issueBuilder.build();
+        // Manually create the JSON payload
+        String jsonPayload = "{"
+                + "\"fields\": {"
+                + "\"project\": {\"key\": \"" + projectKey + "\"},"
+                + "\"summary\": \"" + escapeJson(summary) + "\","
+                + "\"description\": {\"type\": \"doc\", \"version\": 1, \"content\": [{\"type\": \"paragraph\", \"content\": [{\"type\": \"text\", \"text\": \"" + escapeJson(description) + "\"}]}]},"
+                + "\"issuetype\": {\"id\": \"" + issueTypeId + "\"}"
+                + "}"
+                + "}";
 
-            String issueKey = restClient.getIssueClient().createIssue(newIssue).claim().getKey();
+        RequestBody body = RequestBody.create(jsonPayload, MediaType.get("application/json; charset=utf-8"));
+        Request request = new Request.Builder()
+                .url(url)
+                .header("Authorization", authHeader)
+                .header("Accept", "application/json")
+                .post(body)
+                .build();
+
+        try (Response response = client.newCall(request).execute()) {
+            if (!response.isSuccessful()) {
+                LogsUtils.error("Error creating Jira issue: " + response.code() + " - " + response.body().string());
+                throw new IOException("Unexpected code " + response);
+            }
+            String responseBody = response.body().string();
+            JsonObject jsonObject = JsonParser.parseString(responseBody).getAsJsonObject();
+            String issueKey = jsonObject.get("key").getAsString();
             LogsUtils.info("Successfully created Jira issue: " + issueKey);
             return issueKey;
-        } catch (Exception e) {
-            LogsUtils.error("Error creating Jira issue: " + e.getMessage());
-            return null;
         }
     }
 
-    /**
-     * Attaches a file (like a screenshot) to an existing Jira issue.
-     * @param issueKey The key of the issue to attach the file to.
-     * @param fileToAttach The File object of the screenshot.
-     */
-    public void addAttachmentToIssue(String issueKey, File fileToAttach) {
-        try {
-            URI issueUri = URI.create(this.jiraUrl + "/rest/api/2/issue/" + issueKey);
-            restClient.getIssueClient().addAttachments(issueUri, fileToAttach).claim();
+    public void addAttachmentToIssue(String issueKey, File fileToAttach) throws IOException {
+        String url = jiraUrl + "/rest/api/3/issue/" + issueKey + "/attachments";
+
+        RequestBody requestBody = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("file", fileToAttach.getName(),
+                        RequestBody.create(fileToAttach, MediaType.parse("application/octet-stream")))
+                .build();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .header("Authorization", authHeader)
+                .header("X-Atlassian-Token", "no-check")
+                .post(requestBody)
+                .build();
+
+        try (Response response = client.newCall(request).execute()) {
+            if (!response.isSuccessful()) {
+                LogsUtils.error("Error attaching file to Jira issue: " + response.code() + " - " + response.body().string());
+                throw new IOException("Unexpected code " + response);
+            }
             LogsUtils.info("Successfully attached screenshot to issue: " + issueKey);
-        } catch (Exception e) {
-            LogsUtils.error("Error attaching file to Jira issue: " + e.getMessage());
         }
+    }
+
+    // Helper method to make strings safe for JSON
+    private String escapeJson(String str) {
+        return str.replace("\\", "\\\\")
+                .replace("\"", "\\\"")
+                .replace("\b", "\\b")
+                .replace("\f", "\\f")
+                .replace("\n", "\\n")
+                .replace("\r", "\\r")
+                .replace("\t", "\\t");
     }
 }
