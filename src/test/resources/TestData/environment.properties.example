@@ -1,0 +1,16 @@
+Browser=edge
+LoginPage_URL=https://www.saucedemo.com/
+HomePage_URL=https://www.saucedemo.com/inventory.html
+CartIcon_URL=https://www.saucedemo.com/cart.html
+Checkout_informationPage_URL=https://www.saucedemo.com/checkout-step-one.html
+Checkout_Overview_URL=https://www.saucedemo.com/checkout-step-two.html
+
+# ... existing properties ...
+
+# JIRA Configuration
+JIRA_URL=YOUR_JIRA_URL
+JIRA_USERNAME=YOUR_JIRA_USERNAME
+JIRA_API_TOKEN=YOUR_JIRA_API_TOKEN
+JIRA_PROJECT_KEY=YOUR_JIRA_PROJECT_KEY
+
+GEMINI_FREE_API_KEY=YOUR_GEMINI_API_KEY
