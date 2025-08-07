@@ -46,7 +46,7 @@ public class TC09_VisualUserTest {
         LogsUtils.info("Price on main page: " + priceOnMainPage);
         LogsUtils.info("Price on details page: " + priceOnDetailsPage);
         Assert.assertEquals(priceOnMainPage, priceOnDetailsPage,
-                "For visual_user, the product price should be different between the main page and the details page.");
+                "For visual_user, the product price should not be different between the main page and the details page.");
     }
 
     @AfterMethod
